@@ -1,6 +1,6 @@
 # Node CLI based Game
 
-### A 4x4 table with an object in position
+ A 4x4 table with an object in position
 
 ## Basic Rule
 
