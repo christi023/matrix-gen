@@ -1,5 +1,4 @@
-const debug = {};
-
+const debug = require('debug');
 let color = require('colors');
 
 debug.show2dArrayContents = function (map) {
