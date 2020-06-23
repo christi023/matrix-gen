@@ -1,0 +1,20 @@
+{
+  "name": "matrix-gen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app"
+  },
+  "keywords": [],
+  "author": "Sheliann Olsson",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "foreach-combination": "^1.0.0",
+    "lodash": "^4.17.15",
+    "prompt": "^1.0.0"
+  },
+  "devDependencies": {}
+}
