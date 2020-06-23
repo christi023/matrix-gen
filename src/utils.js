@@ -1,21 +1,32 @@
-// function to create 2d Array
-// pass parameters
-function create2dArray() {
-  let a = new Array(4);
-  let sOut = '<table border=2 class="table"> ';
-  for (let i = 0; i < 4; i++) {
-    // for each row
-    sOut += '<tr class="trow"">';
-    a[i] = new Array(4);
-    for (let j = 0; j < 4; j++) {
-      a[i][j] = '' + j + ', ' + i + '';
-      // for each clm
-      sOut += '<td class="tdata">' + a[i][j] + '</td>';
-    }
-    sOut += '</tr>';
-  }
-  sOut += '</table>';
-  return a;
-}
+const player = require('./lib/player.js');
+// Instructions to start
+const instructions = `You have 1 rule here, stay on the table!
+  Usage: npm start [width][height][x][y]`;
 
-module.exports = { create2dArray };
+const commands = `0 - Exit Game
+  1 - Move forward
+  2 - Move backward
+  3 - Rotate 90 degrees clockwise
+  4 - Rotate 90 degrees counter-clockwise`;
+
+const movementSchema = {
+  description: 'Please enter a number for movement option',
+  type: 'string',
+  //pattern: new RegExp('^(' + this.getMovementOptions(player).join('|') + ')$', 'i'),
+  message: 'Please choose an appropriate movement option',
+  require: true,
+  before: (val) => val.toUpperCase(),
+};
+
+create2dArray = (numRows, numCols, initial) => {
+  let arr = [];
+  for (let i = 0; i < numRows; ++i) {
+    let columns = [];
+    for (let j = 0; j < numCols; ++j) {
+      columns[j] = initial;
+    }
+    arr[i] = columns;
+  }
+  return arr;
+};
+module.exports = { create2dArray, movementSchema, instructions, commands };
